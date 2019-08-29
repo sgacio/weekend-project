@@ -21,7 +21,14 @@ const HomePage = () => {
     <>
       <ul>
         {movie.map(result => {
-          return <li>{result.original_name}</li>
+          return (
+            <li>
+              {result.original_name}
+              <p>The popularity of this show is {result.popularity}</p>
+              <p>Overview: {result.overview}</p>
+              <img src={result.poster_path} alt="poster image" />
+            </li>
+          )
         })}
       </ul>
     </>
