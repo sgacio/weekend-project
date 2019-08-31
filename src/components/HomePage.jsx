@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const HomePage = () => {
   const [movie, setMovie] = useState([])
-  // const [name, setName] = useState('')
+  const [movieUrl, setMovieUrl] = useState('https://image.tmdb.org/t/p/w500')
 
   const grabData = async () => {
     const resp = await axios.get(
@@ -22,11 +22,18 @@ const HomePage = () => {
       <ul>
         {movie.map(result => {
           return (
-            <li>
-              {result.original_name}
-              <p>The popularity of this show is {result.popularity}</p>
-              <p>Overview: {result.overview}</p>
-              <img src={result.poster_path} alt="poster image" />
+            <li key={result.id}>
+              <section>
+                {result.original_name}
+                <img
+                  className="image"
+                  src={`${movieUrl}${result.poster_path}`}
+                  alt="poster"
+                />
+                <p>This show premiered on {result.first_air_date}</p>
+                <p>The popularity of this show is {result.popularity}</p>
+                <p>Overview: {result.overview}</p>
+              </section>
             </li>
           )
         })}
