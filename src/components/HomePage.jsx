@@ -25,7 +25,7 @@ const HomePage = () => {
           return (
             <Link to="/Test">
               <li key={result.id}>
-                {result.original_name}
+                <div className="original-name">{result.original_name}</div>
 
                 <div>
                   <img
