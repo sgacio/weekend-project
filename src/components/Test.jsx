@@ -8,7 +8,7 @@ const Test = () => {
 
   const getCastAndCredits = async () => {
     const resp = await axios.get(
-      `https://api.themoviedb.org/3/tv/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa&language=en-US`
+      `https://api.themoviedb.org/3/movie/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa`
     )
     console.log(resp.data.cast)
     setTvId(resp.data.cast)
@@ -18,7 +18,7 @@ const Test = () => {
     getCastAndCredits()
   }, [])
 
-  return <div>n </div>
+  return <div>n</div>
 }
 
 export default Test
