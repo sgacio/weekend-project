@@ -11,7 +11,19 @@ body {
   min-height: 100%;
 }
 
-.image {
-  height: 6rem;
-  width: auto;
+.container{
+  display: flex;
+  justify-content: space-evenly;
+ 
+  
 }
+
+.card-info-section{
+  padding: .5rem;
+  background-color: beige;
+  border-radius: 1rem;
+  
+}
+ 
+
+
