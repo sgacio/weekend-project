@@ -1,21 +1,23 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react-router-dom'
-import { useEffect } from 'react-router-dom'
-
+import { useState, useEffect } from 'react'
+import HomePage from './HomePage'
 
 const Test = () => {
-  const [img, setImg] = useState('')
+  const [tvId, setTvId] = useState(props.match.params.results.id)
 
-  const getImage = async () => {
-   const resp = axios.get('https://api.themoviedb.org/3/configuration?api_key=2d3a8fbb2336ce29522e69bb7f40bffa')
-    setImg(resp.data.images)
-    console.log(resp.data.images)
+  const getCastAndCredits = async () => {
+    const resp = axios.get(
+      `https://api.themoviedb.org/3/tv/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa&language=en-US`
+    )
+    console.log(resp.data.cast)
+    setTvId(resp.data.cast)
   }
 
-  useEffect({
-    getIMage()
+  useEffect(() => {
+    getCastAndCredits()
   }, [])
+
   return <div></div>
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   const [movie, setMovie] = useState([])
@@ -22,19 +23,21 @@ const HomePage = () => {
       <ul>
         {movie.map(result => {
           return (
-            <li key={result.id}>
-              <section>
-                {result.original_name}
-                <img
-                  className="image"
-                  src={`${imageUrl}${result.poster_path}`}
-                  alt="poster"
-                />
-                <p>This show premiered on {result.first_air_date}</p>
-                <p>The popularity of this show is {result.popularity}</p>
-                <p>Overview: {result.overview}</p>
-              </section>
-            </li>
+            <Link to="/Test">
+              <li key={result.id}>
+                <section>
+                  {result.original_name}
+                  <img
+                    className="image"
+                    src={`${imageUrl}${result.poster_path}`}
+                    alt="poster"
+                  />
+                  <p>This show premiered on {result.first_air_date}</p>
+                  <p>The popularity of this show is {result.popularity}</p>
+                  <p>Overview: {result.overview}</p>
+                </section>
+              </li>
+            </Link>
           )
         })}
       </ul>
