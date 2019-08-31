@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import HomePage from './HomePage'
 
 const Test = () => {
-  const [tvId, setTvId] = useState(props.match.params.results.id)
+  const [tvId, setTvId] = useState('')
 
   const getCastAndCredits = async () => {
-    const resp = axios.get(
+    const resp = await axios.get(
       `https://api.themoviedb.org/3/tv/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa&language=en-US`
     )
     console.log(resp.data.cast)
@@ -18,7 +18,7 @@ const Test = () => {
     getCastAndCredits()
   }, [])
 
-  return <div></div>
+  return <div>n </div>
 }
 
 export default Test

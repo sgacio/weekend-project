@@ -20,22 +20,26 @@ const HomePage = () => {
 
   return (
     <>
-      <ul>
+      <ul className="container">
         {movie.map(result => {
           return (
             <Link to="/Test">
               <li key={result.id}>
-                <section>
-                  {result.original_name}
+                {result.original_name}
+
+                <div>
                   <img
-                    className="image"
+                    className="image-section"
                     src={`${imageUrl}${result.poster_path}`}
                     alt="poster"
                   />
+                </div>
+
+                <div className="card-info-section">
                   <p>This show premiered on {result.first_air_date}</p>
                   <p>The popularity of this show is {result.popularity}</p>
                   <p>Overview: {result.overview}</p>
-                </section>
+                </div>
               </li>
             </Link>
           )
