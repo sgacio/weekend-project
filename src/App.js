@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Test from './components/Test'
-import { Link } from 'react-router-dom'
-import NavBar from './components/NavBar'
 
 class App extends Component {
   render() {
     return (
       <main>
-        <NavBar />
         <Router>
+          <nav>
+            <header className="nav-header">This is Albert's TV Show APP</header>
+            <div className="home">
+              <Link to="/">Home</Link>
+            </div>
+          </nav>
           <Switch>
             <Route exact path="/" component={HomePage}></Route>
             <Route exact path="/Test" component={Test}></Route>

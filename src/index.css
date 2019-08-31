@@ -17,8 +17,13 @@ body {
   font-size: 3rem;
   border-bottom: .5rem solid black;
   border-top: .5rem solid black;
-  padding: .8rem;
+  padding: 1.5rem;
   background-color: beige;
+}
+
+.home {
+  margin-top: -2rem;
+  text-align: center;
 }
 
 .container {
