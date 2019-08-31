@@ -35,7 +35,7 @@ body {
 }
 
 .original-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: .4rem;
   margin-top: .4rem;
 }
@@ -56,4 +56,12 @@ body {
 li {
   text-align: center;
   font-size: .89rem;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: black;
 }
