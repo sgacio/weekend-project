@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const HomePage = () => {
   const [movie, setMovie] = useState([])
-  const [movieUrl, setMovieUrl] = useState('https://image.tmdb.org/t/p/w500')
+  const [imageUrl, setImageUrl] = useState('https://image.tmdb.org/t/p/w500')
 
   const grabData = async () => {
     const resp = await axios.get(
@@ -27,7 +27,7 @@ const HomePage = () => {
                 {result.original_name}
                 <img
                   className="image"
-                  src={`${movieUrl}${result.poster_path}`}
+                  src={`${imageUrl}${result.poster_path}`}
                   alt="poster"
                 />
                 <p>This show premiered on {result.first_air_date}</p>
