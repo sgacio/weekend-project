@@ -2,19 +2,25 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const Test = () => {
-  const [tvId, setTvId] = useState('')
+const Test = props => {
+  const [tvId, setTvId] = useState(props.match.params.location.result)
 
-  const getCastAndCredits = async () => {
-    const resp = await axios.get(
-      `https://api.themoviedb.org/3/movie/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa`
-    )
-    console.log(resp.data.cast)
-    setTvId(resp.data.cast)
+  // const getCastAndCredits = async () => {
+  //   const resp = await axios.get(
+  //     `https://api.themoviedb.org/3/movie/${tvId}/credits?api_key=2d3a8fbb2336ce29522e69bb7f40bffa`
+  //   )
+  //   console.log(resp.data.cast)
+  //   setTvId(resp.data.cast)
+  // }
+
+  const whatIsTheIdWeAreUsingPleaseGiveMeTheIdFromTheOtherPage = () => {
+    tvId()
+    console.log(tvId)
   }
 
   useEffect(() => {
-    getCastAndCredits()
+    // getCastAndCredits()
+    whatIsTheIdWeAreUsingPleaseGiveMeTheIdFromTheOtherPage()
   }, [])
 
   return <div>n</div>

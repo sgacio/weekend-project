@@ -12,6 +12,7 @@ class App extends Component {
             <header className="nav-header">This is Albert's TV Show APP</header>
             <div className="home">
               <Link to="/">Home</Link>
+              <p>-click on any show you like-</p>
             </div>
           </nav>
           <Switch>

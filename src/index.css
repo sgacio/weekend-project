@@ -40,6 +40,11 @@ body {
   margin-top: .4rem;
 }
 
+.original-name-highlight {
+  font-size: 3.5rem;
+  margin-top: 10rem;
+}
+
 .card-info-section {
   padding: .5rem;
   background-color: beige;
@@ -48,9 +53,23 @@ body {
   height: 25rem;
 }
 
+.card-info-section-highlight {
+  padding: .5rem;
+  background-color: beige;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 25rem;
+  font-size: .78rem;
+}
+
 .image-section {
   height: 15rem;
   width: 10rem;
+}
+
+.image-sec {
+  height: 26rem;
+  width: 20rem;
 }
 
 li {
