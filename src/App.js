@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Test from './components/Test'
+import Person from './components/Person'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}></Route>
             <Route exact path="/:result" component={Test}></Route>
+            <Route exact path="/:result/:cast" component={Person}></Route>
           </Switch>
         </Router>
       </main>

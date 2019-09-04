@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 // import { MovieContext } from './HomePage'
 
 const Test = props => {
@@ -33,10 +34,12 @@ const Test = props => {
               <p id="Character">Character Name</p>
               <p id="Character-name">{result.character}</p>
             </div>
-            <div>
-              <p id="actor">Actor Name</p>
-              <p id="actor-name">{result.name}</p>
-            </div>
+            <Link to={`/${props.match.params.result}/${result.id}`}>
+              <div>
+                <p id="actor">Actor Name</p>
+                <p id="actor-name">{result.name}</p>
+              </div>
+            </Link>
           </li>
         )
       })}
